@@ -1,4 +1,4 @@
-### Requirements
+# Requirements
 
 Use the following API endpoint to fetch data and display it in your application:
 
@@ -21,7 +21,7 @@ degit LaurenMcCall/react-project-template CryptoTracker
 
 ## Adventure Mode
 
-# **Images**
+### **Images**
 
 If you want images to use for the display, try and use this [repository](https://condacore.github.io/cryptocurrency-icons/) to fetch images as well.
 
@@ -29,6 +29,6 @@ For example, this URL https://raw.githubusercontent.com/condacore/cryptocurrency
 
 NOTE: This will require you to make a generic `CryptoCurrency` component and use `useEffect` within THAT component to fetch the icon!
 
-# **Price Display**
+### **Price Display**
 
 If the updated price of a currency is higher than the last update, show the price in green. If it's lower, show the price in red. **HINT**: You'll probably want to look into additional lifecycle methods for your React components to accomplish this.
