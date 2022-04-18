@@ -15,9 +15,15 @@ export function App() {
   useEffect(function () {
     async function fetchCryptoData() {
       const response = await fetch('https://api.coincap.io/v2/assets')
+
       if (response.ok) {
-        const json = await response.json()
-        console.log(json)
+        const { data } = await response.json()
+        console.log(data)
+
+        const sortCrypto = [...data].sort((a, b) => {
+          return a.rank - b.rank
+        })
+        setCurrency(sortCrypto)
       }
     }
     fetchCryptoData()
@@ -31,16 +37,21 @@ export function App() {
           <i className="fa-brands fa-github bigger"></i>
         </div>
       </header>
-      <ul>
-        {currency.map(function (currency) {
+      <article>
+        {currency.map((currency) => {
           return (
-            <li key={currency.rank}>
-              {currency.name}: ${currency.priceUsd} –
-              {currency.changePercent24Hr}%
-            </li>
+            <section key={currency.id}>
+              <div>
+                <p>{currency.name}</p>
+              </div>
+              <div>
+                <p>${Math.round(currency.priceUsd * 100) / 100}</p>
+                <p>{Math.round(currency.changePercent24Hr * 100) / 100}%</p>
+              </div>
+            </section>
           )
         })}
-      </ul>
+      </article>
     </div>
   )
 }

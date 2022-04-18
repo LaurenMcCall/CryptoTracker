@@ -27,15 +27,14 @@ header {
   font-size: 2.6rem;
 }
 
-ul {
+article {
   display: flex;
   flex-direction: column;
+  list-style: none;
+  // padding: 0.5rem;
 }
 
-li {
-  list-style: none;
-  padding: 0.5rem;
-  margin-left: -36px;
-  margin-right: 4px;
-  border-bottom: 1px solid black;
-}
+// p {
+//   padding: 0.5rem;
+//   border-bottom: 1px solid black;
+// }
