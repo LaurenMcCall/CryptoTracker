@@ -29,6 +29,14 @@ export function App() {
     fetchCryptoData()
   }, [])
 
+  useEffect(function () {
+    const interval = setInterval(() => {
+      console.log('called every 10 seconds')
+    }, 10000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <div>
       <header>
