@@ -11,8 +11,9 @@ export function App() {
   }
 
   const [currency, setCurrency] = useState<CryptoType[]>([])
+  const [counter, setCounter] = useState(0)
 
-  useEffect(function () {
+  function getCryptoData() {
     async function fetchCryptoData() {
       const response = await fetch('https://api.coincap.io/v2/assets')
 
@@ -27,15 +28,25 @@ export function App() {
       }
     }
     fetchCryptoData()
-  }, [])
+  }
 
   useEffect(function () {
+    // QUESTION: why didn't just putting the function here call refresh
+    // the data every 10 secs? Instead I had to call useEffect again below
+    // getCryptoData()
     const interval = setInterval(() => {
+      // QUESTION: I found this guidance on a website. Can we go over this code?
+      // specifically, the +1
+      setCounter((counter) => counter + 1)
       console.log('called every 10 seconds')
     }, 10000)
 
     return () => clearInterval(interval)
   }, [])
+
+  // QUESTION: this is saying --> call getCryptoData every "counter" interval?
+  // (10 secs)?
+  useEffect(getCryptoData, [counter])
 
   return (
     <div>
