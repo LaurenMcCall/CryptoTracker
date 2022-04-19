@@ -59,11 +59,11 @@ export function App() {
           ></a>
         </div>
       </header>
-      <article className="header price">
+      <article className="header">
         <div>
           <p>Name</p>
         </div>
-        <div className="price">
+        <div className="price-header">
           <p>Price</p>
           <p>% Change</p>
         </div>
