@@ -15,26 +15,56 @@ body {
 
 header {
   display: flex;
+  //QUESTION: Any way to have header and second header both remain sticky?
+  // position: sticky;
+  // top: 0;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(139, 185, 126);
-  padding: 0.6rem;
+  padding: 0.4rem;
   color: white;
-  box-shadow: 0 1px 3px #666;
+  box-shadow: 0 1px 3px rgb(167, 81, 6);
+  margin-bottom: 1px;
 }
 
 .bigger {
   font-size: 2.6rem;
 }
 
-article {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  // padding: 0.5rem;
+a {
+  color: white;
+  text-decoration: none;
 }
 
-// p {
-//   padding: 0.5rem;
-//   border-bottom: 1px solid black;
-// }
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.2rem;
+  border-bottom: solid 1px black;
+  margin-bottom: -6px;
+  margin-top: 4px;
+  align-items: center;
+}
+
+.price {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.price p {
+  padding: 0.5rem;
+}
+
+.header {
+  background-color: rgb(250, 194, 105);
+  // color: white;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-left: -3px;
+  border-bottom: solid 1px black;
+}

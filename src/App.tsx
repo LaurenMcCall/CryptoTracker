@@ -53,17 +53,30 @@ export function App() {
       <header>
         <h2>CryptoTicker</h2>
         <div>
-          <i className="fa-brands fa-github bigger"></i>
+          <a
+            className="fa-brands fa-github bigger"
+            href="https://github.com/LaurenMcCall/CryptoTracker"
+          ></a>
         </div>
       </header>
+      <article className="header price">
+        <div>
+          <p>Name</p>
+        </div>
+        <div className="price">
+          <p>Price</p>
+          <p>% Change</p>
+        </div>
+      </article>
       <article>
         {currency.map((currency) => {
           return (
             <section key={currency.id}>
               <div>
+                <p>{currency.symbol}</p>
                 <p>{currency.name}</p>
               </div>
-              <div>
+              <div className="price">
                 <p>${Math.round(currency.priceUsd * 100) / 100}</p>
                 <p>{Math.round(currency.changePercent24Hr * 100) / 100}%</p>
               </div>
